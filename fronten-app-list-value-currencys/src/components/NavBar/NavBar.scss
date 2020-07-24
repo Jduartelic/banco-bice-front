@@ -1,0 +1,22 @@
+@import '../../../styles/shared.scss';
+
+.nav-bar__container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 5rem;
+  width: 100vw;
+  background: #ebebeb;
+  align-items: center;
+  justify-content: center;
+
+  @include desktop {
+    height: 8rem;
+  }
+}
+
+.nav-bar__title {
+  display: block;
+  font: $h1-xs;
+  color: blue;
+}
