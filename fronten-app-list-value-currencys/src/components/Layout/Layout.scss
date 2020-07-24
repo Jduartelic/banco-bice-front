@@ -1,0 +1,21 @@
+.layout__wrapper {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.layout__wrapper-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  padding-top: 9rem;
+}
+
+body {
+  margin: 0;
+}
