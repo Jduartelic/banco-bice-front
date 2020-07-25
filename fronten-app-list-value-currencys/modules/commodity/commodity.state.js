@@ -12,7 +12,7 @@ export const COMMODITYS_GET_FAILURE = 'COMMODITYS_GET_FAILURE';
 /* Initial State */
 
 const initialState = Immutable.fromJS({
-  commoditys: [],
+  commoditys: {},
 
   //
   // Get commoditys

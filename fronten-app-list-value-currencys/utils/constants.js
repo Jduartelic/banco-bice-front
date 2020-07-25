@@ -14,6 +14,13 @@ const parameters = {
   // The pattern follows standard unicode currency pattern notation.
   // comma = group separator, dot = decimal separator, exclamation = currency symbol
 };
+
+export const InfoCurrencys = {
+  dolar: { symbol: '$', currency: 'USD' },
+  pesos: { symbol: '$', currency: 'CLP' },
+  porcentual: { symbol: '%', currency: '' },
+};
+
 export const ENV = publicRuntimeConfig.ENV || 'development';
 
-export const API_URL = ENV === 'production' ? `https://chile.masisa.com` : `https://${ENV}.masisa.io`;
+export const API_URL = `http://localhost:3030/`;

@@ -7,7 +7,7 @@ import { API_URL } from '../../utils/constants';
 
 import { COMMODITYS_GET, commoditysGetSuccess, commoditysGetFailure } from './commodity.state';
 
-const URL = `${API_URL}/`;
+const URL = `${API_URL}`;
 
 //
 // Get commoditys
@@ -17,14 +17,15 @@ export const getCommoditysEpic = (action$, state$) =>
     ofType(COMMODITYS_GET),
     mergeMap(action => {
       return request({
-        method: 'POST',
-        url: URL,
+        method: 'GET',
+        url: `${URL}/last`,
         headers: {
           'Content-Type': 'application/json',
         },
       }).pipe(
         map(({ response }) => {
-          return commoditysGetSuccess(response);
+          const responseData = { data: response };
+          return commoditysGetSuccess(responseData);
         }),
         catchError(error => of(commoditysGetFailure(error))),
       );

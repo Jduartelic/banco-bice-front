@@ -1,14 +1,19 @@
 import React from 'react';
-import Head from 'next/head';
-import ClipLoader from 'react-spinners/ClipLoader';
-import PropTypes from 'prop-types';
+import IconHamburguer from '@components/Common/Icons/icon-hamburguer';
 
 import './NavBar.scss';
 
 const NavBar = () => {
   return (
     <div className="nav-bar__container">
-      <title className="nav-bar__title">Create Next App</title>
+      <div className="nav-bar__inner-container">
+        <div className="nav-bar__hamburguer">
+          <IconHamburguer style={{ width: '3.5rem', height: '100%' }} />
+        </div>
+        <div className="nav-bar__img-container">
+          <img className="nav-bar__img" src={'../../../static/logo-bice.png'} />
+        </div>
+      </div>
     </div>
   );
 };
