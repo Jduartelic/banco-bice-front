@@ -8,5 +8,6 @@ module.exports = withSass({
   poweredByHeader: false,
   publicRuntimeConfig: {
     // Will be available on both server and client
+    ENV: process.env.ENV,
   },
 });
