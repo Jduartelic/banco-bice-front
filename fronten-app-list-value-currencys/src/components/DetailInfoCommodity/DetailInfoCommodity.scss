@@ -52,6 +52,27 @@
   flex-direction: column;
   width: 95%;
   height: auto;
+
+  @include tablet {
+    justify-content: flex-start;
+    width: 50%;
+  }
+}
+
+.detail-info-commodity__container-chart-history {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 95%;
+  }
 }
 
 .detail-info-commodity__container-body {
@@ -62,6 +83,11 @@
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
+
+  @include tablet {
+    justify-content: flex-start;
+    width: 45%;
+  }
 }
 
 .detail-info-commodity__header-sub-title {
