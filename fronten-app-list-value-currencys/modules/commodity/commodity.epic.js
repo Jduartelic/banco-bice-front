@@ -5,7 +5,14 @@ import { request } from 'universal-rxjs-ajax';
 
 import { API_URL } from '../../utils/constants';
 
-import { COMMODITYS_GET, commoditysGetSuccess, commoditysGetFailure } from './commodity.state';
+import {
+  COMMODITYS_GET,
+  commoditysGetSuccess,
+  commoditysGetFailure,
+  DETAIL_INFO_COMMODITYS_GET,
+  detailnfoCommoditysGetSuccess,
+  detailnfoCommoditysGetFailure,
+} from './commodity.state';
 
 const URL = `${API_URL}`;
 
@@ -32,4 +39,32 @@ export const getCommoditysEpic = (action$, state$) =>
     }),
   );
 
-export default combineEpics(getCommoditysEpic);
+//
+// Get detail info commoditys
+//
+export const getDetailInfoCommoditysEpic = (action$, state$) =>
+  action$.pipe(
+    ofType(DETAIL_INFO_COMMODITYS_GET),
+    mergeMap(action => {
+      const { key } = action.payload;
+
+      const body = { key };
+
+      return request({
+        method: 'POST',
+        url: `${URL}/info`,
+        body: JSON.stringify(body),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).pipe(
+        map(({ response }) => {
+          const responseData = { data: response };
+          return detailnfoCommoditysGetSuccess(responseData);
+        }),
+        catchError(error => of(detailnfoCommoditysGetFailure(error))),
+      );
+    }),
+  );
+
+export default combineEpics(getCommoditysEpic, getDetailInfoCommoditysEpic);
