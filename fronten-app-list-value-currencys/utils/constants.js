@@ -2,6 +2,7 @@ import getConfig from 'next/config';
 import { format } from 'currencyformatter.js';
 
 const { publicRuntimeConfig } = getConfig();
+const { publicRuntimeConfig = {} } = getConfig() || {};
 
 const parameters = {
   currency: 'CLP', // If currency is not supplied, defaults to USD
