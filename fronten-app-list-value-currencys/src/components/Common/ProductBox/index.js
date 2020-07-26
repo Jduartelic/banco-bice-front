@@ -1,5 +1,5 @@
 import React from 'react';
-import ClipLoader from 'react-spinners/ClipLoader';
+import Router from 'next/router';
 import PropTypes from 'prop-types';
 import { InfoCurrencys } from '@utils/constants';
 import moment from 'moment';
@@ -13,7 +13,14 @@ const ProductBox = props => {
   const formattedDate = moment(date).format('DD/MM/YYYY');
 
   return (
-    <li className="product-box__container">
+    <li
+      className="product-box__container"
+      onClick={() => {
+        return Router.push({ pathname: '/detail-info-commodity', query: { key: commodity.key } }).then(() =>
+          window.scrollTo(0, 0),
+        );
+      }}
+    >
       <div className="product-box__content-container">
         <div className="product-box__content">
           <div className="product-box__header-commodity">

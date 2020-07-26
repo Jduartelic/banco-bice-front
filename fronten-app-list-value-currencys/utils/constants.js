@@ -23,4 +23,4 @@ export const InfoCurrencys = {
 
 export const ENV = publicRuntimeConfig.ENV || 'development';
 
-export const API_URL = `http://localhost:3030/`;
+export const API_URL = `http://localhost:3030`;
