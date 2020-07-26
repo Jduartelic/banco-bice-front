@@ -60,21 +60,23 @@ class DetailInfoCommodity extends React.Component {
             <label className="detail-info-commodity__date-title">{infoCommodity.date}</label>
           </div>
         </div>
-        <div className="detail-info-commodity__container-chart">
-          <Line data={data} />
-        </div>
-        <ul className="detail-info-commodity__container-body">
-          <label className="detail-info-commodity__header-sub-title">Valores historicos</label>
+        <div className="detail-info-commodity__container-chart-history">
+          <div className="detail-info-commodity__container-chart">
+            <Line data={data} />
+          </div>
+          <ul className="detail-info-commodity__container-body">
+            <label className="detail-info-commodity__header-sub-title">Valores historicos</label>
 
-          {Object.keys(historyValues).map(item => {
-            const propsHistoryValues = {
-              date: item,
-              price: historyValues[item],
-              selectedCommodity,
-            };
-            return <HistoryValues {...propsHistoryValues} />;
-          })}
-        </ul>
+            {Object.keys(historyValues).map(item => {
+              const propsHistoryValues = {
+                date: item,
+                price: historyValues[item],
+                selectedCommodity,
+              };
+              return <HistoryValues {...propsHistoryValues} />;
+            })}
+          </ul>
+        </div>
         <div className="detail-info-commodity__buttton-container">
           <button
             className="detail-info-commodity__button"

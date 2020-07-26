@@ -13,19 +13,14 @@
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto;
-  width: 100%;
+  width: 95%;
   row-gap: 1rem;
   height: auto;
   overflow-y: scroll;
   padding-bottom: 2rem;
 
   @include tablet {
-    column-gap: 4%;
-    grid-template-columns: 30% 68%;
-  }
-
-  @include desktop {
-    grid-template-columns: 28% 74%;
+    grid-template-columns: 25% 25% 25% 25%;
   }
 }
 
@@ -33,4 +28,8 @@
   font: $h1-xs;
   color: $color-primary-bice;
   padding: 1rem 0;
+
+  @include tablet {
+    width: 95%;
+  }
 }
