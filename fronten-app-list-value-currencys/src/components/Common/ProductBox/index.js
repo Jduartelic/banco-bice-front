@@ -7,7 +7,7 @@ import moment from 'moment';
 import './ProductBox.scss';
 
 const ProductBox = props => {
-  const { commodity } = props;
+  const { commodity, uniqueVal } = props;
   const info = InfoCurrencys[commodity.unit];
   const date = new Date(commodity.date * 1000);
   const formattedDate = moment(date).format('DD/MM/YYYY');
@@ -20,6 +20,7 @@ const ProductBox = props => {
           window.scrollTo(0, 0),
         );
       }}
+      key={uniqueVal}
     >
       <div className="product-box__content-container">
         <div className="product-box__content">
