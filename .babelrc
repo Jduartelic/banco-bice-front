@@ -1,0 +1,20 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@pages": "./pages",
+          "@utils": "./utils",
+          "@redux": "./redux",
+          "@modules": "./modules",
+          "@styles": "./styles",
+          "@static": "./static",
+          "@errors": "./errors",
+          "@components": "./src/components"
+        }
+      }
+    ]
+  ]
+}
