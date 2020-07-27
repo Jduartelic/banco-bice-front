@@ -9,7 +9,7 @@
   background: $color-white;
   align-items: center;
   justify-content: center;
-
+  z-index: 1;
   @include desktop {
     height: 8rem;
   }

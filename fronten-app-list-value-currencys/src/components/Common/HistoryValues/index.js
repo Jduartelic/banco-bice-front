@@ -12,8 +12,11 @@ const HistoryValues = props => {
 
   return (
     <li className="history-values__container">
-      <div className="history-values__content-commodity">
+      <div className="history-values__content-title">
         <h1 className="history-values__header-title">{selectedCommodity.name}</h1>
+      </div>
+
+      <div className="history-values__content-sub-titles">
         <label className="history-values__price-title">
           {info.symbol}
           {price}

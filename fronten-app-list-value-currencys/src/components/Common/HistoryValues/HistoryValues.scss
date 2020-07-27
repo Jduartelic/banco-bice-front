@@ -22,12 +22,20 @@
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.14);
 }
 
-.history-values__content-commodity {
+.history-values__content-title {
   display: flex;
   width: 100%;
   height: auto;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding-top: 1rem;
+}
+
+.history-values__content-sub-titles {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  padding-bottom: 1rem;
 }
 
 .history-values__header-title {
