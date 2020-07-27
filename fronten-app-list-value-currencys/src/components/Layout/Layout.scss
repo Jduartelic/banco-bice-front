@@ -1,3 +1,5 @@
+@import '../../../styles/shared.scss';
+
 .layout__wrapper {
   display: flex;
   flex-direction: column;
@@ -13,7 +15,11 @@
   flex-direction: column;
   height: auto;
   width: 100%;
-  padding-top: 9rem;
+  padding-top: 5rem;
+
+  @include tablet {
+    padding-top: 8rem;
+  }
 }
 
 body {

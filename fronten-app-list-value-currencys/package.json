@@ -5,24 +5,40 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch"
+  },
+  "jest": {
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "./.next/",
+      "./node_modules/"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less|scss)$": "babel-jest"
+    }
   },
   "dependencies": {
-    "next": "9.4.4",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
     "@babel/core": "^7.7.4",
     "@zeit/next-less": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "chart.js": "^2.9.3",
     "css-mediaquery": "^0.1.2",
     "currencyformatter.js": "^2.2.0",
     "dotenv": "^8.2.0",
     "immutable": "^4.0.0-rc.9",
     "latest": "^0.2.0",
     "moment": "^2.24.0",
+    "next": "9.4.4",
     "next-redux-wrapper": "^3.0.0-alpha.2",
     "node-sass": "^4.13.0",
     "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-chartjs-2": "^2.9.0",
+    "react-dom": "16.13.1",
     "react-moment": "^0.9.2",
     "react-redux": "^5.1.1",
     "react-ripples": "^2.2.1",
@@ -47,7 +63,11 @@
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^4.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
+    "react-test-renderer": "^16.13.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.6"
   }
