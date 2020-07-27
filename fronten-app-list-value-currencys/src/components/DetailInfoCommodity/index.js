@@ -10,7 +10,7 @@ import './DetailInfoCommodity.scss';
 class DetailInfoCommodity extends React.Component {
   render() {
     const { detailnfoCommodity, selectedCommodity } = this.props;
-    const { labelsChart, prices } = detailnfoCommodity.chartData;
+    const { labelsChart, prices, dataSetLabels } = detailnfoCommodity.chartData;
     const labelsCharts = labelsChart;
     const pricesData = prices;
     const info = InfoCurrencys[detailnfoCommodity.unit];
@@ -63,6 +63,12 @@ class DetailInfoCommodity extends React.Component {
         <div className="detail-info-commodity__container-chart-history">
           <div className="detail-info-commodity__container-chart">
             <Line data={data} />
+
+            <div className="detail-info-commodity__chart-data-set">
+              {dataSetLabels.map(item => {
+                return <label className="detail-info-commodity__unit-title">{item}</label>;
+              })}
+            </div>
           </div>
           <ul className="detail-info-commodity__container-body">
             <label className="detail-info-commodity__header-sub-title">Valores historicos</label>
