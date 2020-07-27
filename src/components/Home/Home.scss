@@ -1,0 +1,35 @@
+@import '../../../styles/shared.scss';
+
+.home-landing__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.home-landing__container-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  width: 95%;
+  row-gap: 1rem;
+  height: auto;
+  overflow-y: scroll;
+  padding-bottom: 2rem;
+
+  @include tablet {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
+
+.home-landing__title {
+  font: $h1-xs;
+  color: $color-primary-bice;
+  padding: 1rem 0;
+
+  @include tablet {
+    width: 95%;
+  }
+}
