@@ -22,7 +22,13 @@ Good Practices:
 npm install
 ```
 
-2. Run project:
+2. Run Test:
+
+```
+npm test
+```
+
+3. Run project:
 
 ```
 npm run dev
