@@ -53,10 +53,23 @@
   width: 95%;
   height: auto;
 
+  @include tablet {
+    position: fixed;
+    justify-content: flex-start;
+    width: 50%;
+  }
+}
+
+.detail-info-commodity__container-chart-body {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height: auto;
+
   position: relative;
   @include tablet {
     justify-content: flex-start;
-    width: 50%;
+    width: 45vw;
   }
 }
 

@@ -61,13 +61,15 @@ class DetailInfoCommodity extends React.Component {
           </div>
         </div>
         <div className="detail-info-commodity__container-chart-history">
-          <div className="detail-info-commodity__container-chart">
-            <Line data={data} />
+          <div className="detail-info-commodity__container-chart-body">
+            <div className="detail-info-commodity__container-chart">
+              <Line data={data} />
 
-            <div className="detail-info-commodity__chart-data-set">
-              {dataSetLabels.map(item => {
-                return <label className="detail-info-commodity__unit-title">{item}</label>;
-              })}
+              <div className="detail-info-commodity__chart-data-set">
+                {dataSetLabels.map(item => {
+                  return <label className="detail-info-commodity__unit-title">{item}</label>;
+                })}
+              </div>
             </div>
           </div>
           <ul className="detail-info-commodity__container-body">
